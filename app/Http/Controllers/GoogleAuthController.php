@@ -31,13 +31,15 @@ class GoogleAuthController extends Controller
 
                 Auth::login($new_user);
 
-                return redirect()->intended(route('index'));
+                // return redirect()->intended(route('customer.home'));
+                return view('customer.home');
             }
             
             else {
                 Auth::login($user);
 
-                return redirect()->intended(route('index'));
+                // return redirect()->intended(route('customer.home'));
+                return view('customer.home');
             }
         } catch (\Throwable $th) {
 
